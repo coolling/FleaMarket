@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4f3c9202-b713-48f6-b643-89755fdb543d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z7o3A4uFD3iSil646FTRP8XSti" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="findjar.last.used.dir" value="$USER_HOME$/Downloads/第五讲相关程序 软件" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/server" />
+      <recent name="$PROJECT_DIR$/src/client/img" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/img" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="client.pages" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Register">
+    <configuration name="Evaluation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.pages.Evaluation" />
+      <module name="FleaMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.pages.Login" />
+      <module name="FleaMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Register" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.pages.Register" />
+      <module name="FleaMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransactionRecord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.pages.TransactionRecord" />
+      <module name="FleaMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.pages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Sever_mechine.start" />
+      <module name="FleaMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sever_mechine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.start" />
+        <item itemvalue="Application.Login" />
+        <item itemvalue="Application.Register" />
+        <item itemvalue="Application.Evaluation" />
+        <item itemvalue="Application.TransactionRecord" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f3c9202-b713-48f6-b643-89755fdb543d" name="Default Changelist" comment="" />
+      <created>1584199291309</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584199291309</updated>
+      <workItem from="1584199292589" duration="314000" />
+      <workItem from="1584713159048" duration="539000" />
+      <workItem from="1584713836036" duration="2730000" />
+      <workItem from="1584717698930" duration="10159000" />
+      <workItem from="1584883462892" duration="252000" />
+      <workItem from="1584883744945" duration="94000" />
+      <workItem from="1584883848428" duration="774000" />
+      <workItem from="1584886567382" duration="316000" />
+      <workItem from="1584886906030" duration="17162000" />
+      <workItem from="1585047261875" duration="567000" />
+      <workItem from="1585048094511" duration="670000" />
+      <workItem from="1585049825405" duration="2914000" />
+      <workItem from="1585327118877" duration="116000" />
+      <workItem from="1585327237520" duration="254000" />
+      <workItem from="1585412878975" duration="1088000" />
+      <workItem from="1585415025068" duration="542000" />
+      <workItem from="1585818421499" duration="1600000" />
+      <workItem from="1585837278174" duration="3000" />
+      <workItem from="1585837334236" duration="75000" />
+      <workItem from="1585837435954" duration="76000" />
+      <workItem from="1585837623161" duration="66000" />
+      <workItem from="1585837704948" duration="120000" />
+      <workItem from="1585837877911" duration="128000" />
+      <workItem from="1585838524292" duration="2161000" />
+      <workItem from="1585840770519" duration="231000" />
+      <workItem from="1585841022902" duration="1251000" />
+      <workItem from="1585842871675" duration="548000" />
+      <workItem from="1585843480781" duration="1492000" />
+      <workItem from="1585981583234" duration="482000" />
+      <workItem from="1585991570469" duration="652000" />
+      <workItem from="1586001690829" duration="2617000" />
+      <workItem from="1586008776919" duration="308000" />
+      <workItem from="1586009445053" duration="304000" />
+      <workItem from="1586010780256" duration="6000" />
+      <workItem from="1586010818446" duration="650000" />
+      <workItem from="1586011948497" duration="814000" />
+      <workItem from="1586012884040" duration="1772000" />
+      <workItem from="1586016842624" duration="13000" />
+      <workItem from="1586016865478" duration="873000" />
+      <workItem from="1586017802875" duration="139000" />
+      <workItem from="1586018103503" duration="435000" />
+      <workItem from="1586018579560" duration="4505000" />
+      <workItem from="1586074438691" duration="2043000" />
+      <workItem from="1586076911677" duration="26000" />
+      <workItem from="1586076951493" duration="55000" />
+      <workItem from="1586077206347" duration="3267000" />
+      <workItem from="1586083877778" duration="181000" />
+      <workItem from="1586084114176" duration="117000" />
+      <workItem from="1586084234681" duration="1126000" />
+      <workItem from="1586085728219" duration="294000" />
+      <workItem from="1586086692763" duration="393000" />
+      <workItem from="1586089766518" duration="75000" />
+      <workItem from="1586090512892" duration="1071000" />
+      <workItem from="1586091834231" duration="436000" />
+      <workItem from="1586093024466" duration="1273000" />
+      <workItem from="1586094713909" duration="3653000" />
+      <workItem from="1586264408349" duration="1683000" />
+      <workItem from="1586266220305" duration="18000" />
+      <workItem from="1586266253811" duration="2606000" />
+      <workItem from="1586269847783" duration="987000" />
+      <workItem from="1586271178870" duration="38000" />
+      <workItem from="1586271221277" duration="9102000" />
+      <workItem from="1586500172822" duration="3000" />
+      <workItem from="1586500254094" duration="290000" />
+      <workItem from="1586500914566" duration="6911000" />
+      <workItem from="1586520041490" duration="291000" />
+      <workItem from="1586520378817" duration="7703000" />
+      <workItem from="1586529333028" duration="248000" />
+      <workItem from="1586529608728" duration="1535000" />
+      <workItem from="1586584036518" duration="6427000" />
+      <workItem from="1586621763836" duration="1433000" />
+      <workItem from="1586662368098" duration="1228000" />
+      <workItem from="1586663812783" duration="1977000" />
+      <workItem from="1586783617865" duration="14649000" />
+      <workItem from="1586868340244" duration="29000" />
+      <workItem from="1586868876253" duration="45000" />
+      <workItem from="1586869060412" duration="67000" />
+      <workItem from="1586869145324" duration="27117000" />
+      <workItem from="1587221102985" duration="8665000" />
+      <workItem from="1587235287088" duration="859000" />
+      <workItem from="1587267275390" duration="4006000" />
+      <workItem from="1587292620711" duration="48000" />
+      <workItem from="1587292683290" duration="3569000" />
+      <workItem from="1587297014161" duration="1727000" />
+      <workItem from="1587298841335" duration="20645000" />
+      <workItem from="1587735288453" duration="8898000" />
+      <workItem from="1546309702399" duration="274000" />
+      <workItem from="1588298950617" duration="6884000" />
+      <workItem from="1588490131441" duration="10677000" />
+      <workItem from="1588521541663" duration="8817000" />
+      <workItem from="1588530762251" duration="5056000" />
+      <workItem from="1588535988820" duration="387000" />
+      <workItem from="1588536386216" duration="16041000" />
+      <workItem from="1588686801399" duration="24786000" />
+      <workItem from="1588761980063" duration="375000" />
+      <workItem from="1588762388439" duration="10299000" />
+      <workItem from="1588787940134" duration="12918000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
