@@ -10,8 +10,8 @@ import java.net.Socket;
 public class SearchSocket {
     public static String searchServe(String key) throws IOException {
         String re="";
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.search);
+  //      InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.search);
         System.out.print("请求连接");
 
         try {

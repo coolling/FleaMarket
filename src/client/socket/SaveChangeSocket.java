@@ -10,8 +10,8 @@ import java.net.Socket;
 public class SaveChangeSocket {
     public static String SaveChangeServe(String userId,String name,String nickname,String sex,String grade,String tele,String major,String area) throws IOException {
         String result = "1";
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.editPort);
+    //    InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.editPort);
         System.out.print("请求连接");
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));

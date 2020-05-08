@@ -11,7 +11,7 @@ import java.net.Socket;
 public class ReleaseSocket {
     public static String  ReleaseServer(String userId,String name,String price,String detail,String amout) throws IOException {
         String result="1";
-        InetAddress addr = InetAddress.getLocalHost();
+       // InetAddress addr = InetAddress.getLocalHost();
         Socket socket = new Socket("127.0.0.1", Base.releasePort);
         System.out.print("请求连接");
         String base64;

@@ -28,11 +28,19 @@ public class ShoppingCart  extends JFrame {
         int x = (screen.width - 1111) / 2;
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.checkCarPort);
+
+
+        view();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+    }
+    private void view() throws IOException {
+      //  InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.checkCarPort);
         System.out.print("请求连接");
-        repaint();
-        revalidate();
+
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 //客户端输入流，接收服务器消息
@@ -57,7 +65,7 @@ public class ShoppingCart  extends JFrame {
             myGoods=new String[js.getJSONArray("data").size()][7];
             if(js.getJSONArray("data").size()!=0){
 
-               int count =js.getJSONArray("data").size();
+                int count =js.getJSONArray("data").size();
                 for(int i=0;i<js.getJSONArray("data").size();i++){
                     JSONObject a= (JSONObject) js.getJSONArray("data").get(i);
                     String n[] =new String[7];
@@ -75,26 +83,26 @@ public class ShoppingCart  extends JFrame {
                 }
                 int b=0;
                 String goodss[][]=new String[js.getJSONArray("data").size()][7];
-               for(int i=0;i<count;i++){
-                   boolean flag = false;
-                   for(int j=0;j<i;j++){
-                       if(myGoods[i][3].equals(myGoods[j][3])){
-                             myGoods[j][1]=""+(Integer.parseInt((String) myGoods[j][1])+1);
-                           myGoods[j][4]=(Integer.parseInt((String) myGoods[j][1]))*Float.parseFloat((String) myGoods[j][2])+"";
-                             flag=true;
-                       }
-                   }
-                   if(!flag){
-                       goodss[b]= (String[]) myGoods[i];
-                       b++;
-                   }
+                for(int i=0;i<count;i++){
+                    boolean flag = false;
+                    for(int j=0;j<i;j++){
+                        if(myGoods[i][3].equals(myGoods[j][3])){
+                            myGoods[j][1]=""+(Integer.parseInt((String) myGoods[j][1])+1);
+                            myGoods[j][4]=(Integer.parseInt((String) myGoods[j][1]))*Float.parseFloat((String) myGoods[j][2])+"";
+                            flag=true;
+                        }
+                    }
+                    if(!flag){
+                        goodss[b]= (String[]) myGoods[i];
+                        b++;
+                    }
 
-               }
-               String agood[][]=new String[b][7];
-               for(int i=0;i<b;i++){
-                   agood[i]=goodss[i];
-               }
-               myGoods=agood;
+                }
+                String agood[][]=new String[b][7];
+                for(int i=0;i<b;i++){
+                    agood[i]=goodss[i];
+                }
+                myGoods=agood;
             }
 
         } catch (IOException e) {
@@ -108,14 +116,6 @@ public class ShoppingCart  extends JFrame {
                 }
             }
         }
-
-        view();
-
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-    }
-    private void view() {
         this.getContentPane().setBackground(Color.white);
         Color color1 = new Color(231, 252, 243);
         Head head = new Head("");

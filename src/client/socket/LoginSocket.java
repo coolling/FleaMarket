@@ -14,8 +14,8 @@ public class LoginSocket {
 
    public static String loginServe(String userId,String password) throws IOException {
         String result = "1";
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.loginPort);
+    //    InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.loginPort);
         System.out.print("请求连接");
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));

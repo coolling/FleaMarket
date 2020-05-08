@@ -37,11 +37,21 @@ public class PersonalCenter extends JFrame {
         int x = (screen.width - 1111) / 2;
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.goCenter);
+
+
+        view();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+    }
+    public String getUrl(){
+        return imgUrl;
+    }
+    private void view() throws IOException {
+        Socket socket = new Socket("127.0.0.1", Base.goCenter);
         System.out.print("请求连接");
-        repaint();
-        revalidate();
+
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 //客户端输入流，接收服务器消息
@@ -63,7 +73,7 @@ public class PersonalCenter extends JFrame {
             System.out.println("输入信息为："+strInputstream);
             JSONObject js = JSONObject.parseObject(strInputstream);
             //System.out.println(js);
-           sex= js.getString("userSex");
+            sex= js.getString("userSex");
             area= js.getString("userAddress");
             major= js.getString("userMajor");
             nickName= js.getString("userWebname");
@@ -102,16 +112,6 @@ public class PersonalCenter extends JFrame {
                 }
             }
         }
-        view();
-
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-    }
-    public String getUrl(){
-        return imgUrl;
-    }
-    private void view() throws IOException {
         repaint();
         revalidate();
         this.getContentPane().setBackground(Color.white);
@@ -134,7 +134,7 @@ public class PersonalCenter extends JFrame {
         CLabel message = new CLabel("消息");
         head.add(message);
         message.setBounds(780,10,100,50);
-        CheckMessage checkMessage = new CheckMessage(message,this);
+        CheckMessage checkMessage = new CheckMessage(message,this,id);
         message.addMouseListener(checkMessage);
 
         GoEditEvent goEditEvent = new GoEditEvent(modify,this,id);

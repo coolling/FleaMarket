@@ -10,8 +10,8 @@ import java.net.Socket;
 public class BuySocket {
     public static String buyServe(int goodsId,String id,int amount) throws IOException {
         String re="";
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.buy);
+       // InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.buy);
         System.out.print("请求连接");
 
         try {

@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class RegisterSocket {
     public static String  registerServe(String userId,String pass) throws IOException {
         String result="1";
-        InetAddress addr = InetAddress.getLocalHost();
+       // InetAddress addr = InetAddress.getLocalHost();
         Socket socket = new Socket("127.0.0.1", Base.registerPort);
         System.out.print("请求连接");
         try {

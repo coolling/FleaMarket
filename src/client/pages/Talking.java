@@ -15,13 +15,13 @@ public class Talking extends JFrame {
     JPanel talkdiv = new JPanel();
  String id;
  String name;
-   String talkings[][] = {{"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。", "0"},
+   String talkings[][] = {{"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 编程语言都支持JSON。", "0"},
             {"/WechatIMG12.jpeg", "hello", "1"},
-            {"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。", "0"},
+            {"/WechatIMG10.jpeg", "JSON编程语言都支持JSON。", "0"},
             {"/WechatIMG12.jpeg", "hello", "1"}};
-    public Talking(String id,String name) {
+    public Talking() {
         super();
-this.id =id;
+//this.id =id;
         setLayout(null);
         Toolkit toolkit = Toolkit.getDefaultToolkit();//获得默认的底层控件的基本功能
         Dimension screen = toolkit.getScreenSize();
@@ -95,7 +95,7 @@ this.id =id;
             all.setLayout(null);
             JPanel sentence = new JPanel();
             sentence.setBackground(Color.white);
-            all.setPreferredSize(new Dimension(1111, 80+(row-1)*30));
+            all.setPreferredSize(new Dimension(1111, 60+(row-1)*30));
             ImagePanel head = new ImagePanel(talkings[i][0]);
             all.add(head);
             sentence.setBounds(105, 20, 890, 80*row);
@@ -144,8 +144,7 @@ this.id =id;
     }
 
 
-    public static void main(String[] args) {
-    //    Talking Connecter = new Talking();
+    public static void main(String[] args) {// Talking Connecter = new Talking("1","!");
     }
 }
 

@@ -10,8 +10,8 @@ import java.net.Socket;
 public class ComSocket {
     public static String  comServer(String id,  String goodId,String comments) throws IOException {
         String re="0";
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.comment);
+      //  InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.comment);
         System.out.print("请求连接");
 
         try {

@@ -11,8 +11,8 @@ import java.net.UnknownHostException;
 public class AddCartSocket {
      public static String  addServer(String id, String goodsName, float goodsPrice, int goodsAmount, String goodId) throws IOException {
          String re="0";
-         InetAddress addr = InetAddress.getLocalHost();
-         Socket socket = new Socket(addr, Base.addCarPort);
+         //InetAddress addr = InetAddress.getLocalHost();
+         Socket socket = new Socket("127.0.0.1", Base.addCarPort);
          System.out.print("请求连接");
 
          try {

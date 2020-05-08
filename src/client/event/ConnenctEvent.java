@@ -19,8 +19,7 @@ public class ConnenctEvent implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
-            //new Talking(id);
+            frame.dispose();new Talking();
         }
 
 

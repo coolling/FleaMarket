@@ -31,11 +31,19 @@ public class TransactionRecord extends JFrame {
         int x = (screen.width - 1111) / 2;
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.checkRePort);
+
+        view();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+    }
+
+    private void view() throws IOException {
+        //InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.checkRePort);
         System.out.print("请求连接");
-        repaint();
-        revalidate();
+
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 //客户端输入流，接收服务器消息
@@ -88,14 +96,6 @@ public class TransactionRecord extends JFrame {
                 }
             }
         }
-        view();
-
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-    }
-
-    private void view() {
         this.getContentPane().setBackground(Color.white);
         Color color1 = new Color(231, 252, 243);
         Head head = new Head("");

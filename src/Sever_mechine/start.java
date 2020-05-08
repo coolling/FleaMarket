@@ -2,12 +2,12 @@ package Sever_mechine;
 
 import Sever_mechine.Comment.*;
 import Sever_mechine.Good.*;
+import Sever_mechine.Messagee.OnlineServer;
 import Sever_mechine.ShopCarr.*;
 import Sever_mechine.TR.*;
 import Sever_mechine.User.*;
 
 import java.io.*;
-import java.net.*;
 import java.lang.*;
 
 public class start {
@@ -46,6 +46,7 @@ public class start {
         TrSeeLine TrSee = new TrSeeLine();
 
         //创建所有 Message 开头累的线程对象；
+        messageLine message = new messageLine();
 
 
         /*——————————————————————————分界线——————————————————————————*/
@@ -83,6 +84,7 @@ public class start {
         Thread TrReceiveStart = new Thread(TrReceive);
 
         //传递给所有 Message 线程对象的构造函数；
+        Thread messageStart = new Thread(message);
 
         /*——————————————————————————分界线——————————————————————————*/
 
@@ -109,6 +111,7 @@ public class start {
         commentSeeStart.start();
         TrReceiveStart.start();
         TrSeeStart.start();
+        messageStart.start();
     }
 
 }
@@ -205,7 +208,7 @@ class goodAddLine implements Runnable {
         while (true) {
             System.out.println("ok from goodLine 1");
             try {
-                Goods_add.main();
+                new Goods_add().add_serve();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -289,7 +292,7 @@ class goodBuyLine implements Runnable {
         while (true) {
             try {
                 System.out.println("ok from goodLine 7");
-                Goods_buy.main();
+                new Sever_mechine.Good.Goods_buy().buy_serve();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -375,7 +378,7 @@ class commentAddLine implements Runnable {
         while (true) {
             try {
                 System.out.println("ok from commentLine 1");
-                Comments_add.main();
+                new Sever_mechine.Comment.Comments_add().add_serve();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -389,7 +392,7 @@ class commentSeeLine implements Runnable {
         while (true) {
             try {
                 System.out.println("ok from commentLine 2");
-                Comments_see.main();
+                new Sever_mechine.Comment.Comments_see().see_serve();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -427,6 +430,18 @@ class TrSeeLine implements Runnable {
 }
 //Tr到此为止
 //以下是有关Message的方法；
-
+class messageLine implements  Runnable {
+    public void run(){
+        System.out.println("messageLine on !");
+        while (true) {
+            try {
+                System.out.println("ok from messageLine");
+                new OnlineServer().open();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
 
 //Message到此为止

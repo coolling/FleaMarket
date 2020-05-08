@@ -1,31 +1,47 @@
 package client.pages;
 
+import client.base.Base;
 import client.component.*;
 import client.event.GoCenterEvent;
 import client.event.RegisterEvent;
+import client.socket.SearchSocket;
+import client.socket.TalkingSocket;
+import com.alibaba.fastjson.JSONObject;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.xml.bind.DatatypeConverter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.Socket;
 
 public class Connecter extends JFrame {
     JScrollPane talkDiv = new JScrollPane();
     JPanel talkdiv = new JPanel();
     JScrollPane connectorDiv = new JScrollPane();
     JPanel connectordiv = new JPanel();
-    String[][] connectors = {{"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}, {"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}, {"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}};
+    String[][] connectors ={{"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}, {"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}, {"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}};
     String talkings[][] = {{"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。", "0"},
             {"/WechatIMG12.jpeg", "hello", "1"},
             {"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。", "0"},
             {"/WechatIMG12.jpeg", "hello", "1"}};
-    public Connecter() {
+    String id;
+    public Connecter(String id) throws IOException {
         super();
-
+        this.id=id;
         setLayout(null);
         Toolkit toolkit = Toolkit.getDefaultToolkit();//获得默认的底层控件的基本功能
         Dimension screen = toolkit.getScreenSize();
         int x = (screen.width - 1111) / 2;
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
+
         view();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -33,7 +49,45 @@ public class Connecter extends JFrame {
         setVisible(true);
     }
 
-    private void view() {
+    private void view() throws IOException {
+      //  InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.talk);
+        System.out.print("请求连接");
+        repaint();
+        revalidate();
+        try {
+            BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+//客户端输入流，接收服务器消息
+            BufferedReader br=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter pw=new PrintWriter(bw,true); //装饰输出流，及时刷新
+            //接受用户信息
+            String msg=null;
+
+
+            JSONObject joson = new JSONObject();
+            //string
+
+            joson.put("userId", id);
+            // joson.put("type", "getChatter");
+            String string = joson.toString();
+            msg = string;
+            pw.println(msg);
+            JSONObject joson1 = new JSONObject();
+            joson1.put("user", id);
+            joson1.put("type", "getChatter");
+            String string1 = joson1.toString();
+            msg = string1;
+            pw.println(msg);
+            String strInputstream=br.readLine();
+            System.out.println("输入信息为："+strInputstream);
+            JSONObject js = JSONObject.parseObject(strInputstream);
+            //System.out.println(js);
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         this.getContentPane().setBackground(Color.white);
         Color color1 = new Color(231, 252, 243);
         Head head = new Head("");
@@ -45,8 +99,8 @@ public class Connecter extends JFrame {
         welcome.setBounds(400, 1, 350, 70);
         head.add(welcome);
         JLabel back = new JLabel("返回个人中心");
-       // GoCenterEvent goCenterEvent = new GoCenterEvent(back, this);
-       // back.addMouseListener(goCenterEvent);
+       GoCenterEvent goCenterEvent = new GoCenterEvent(back, this,id);
+       back.addMouseListener(goCenterEvent);
         back.setBounds(25, 23, 250, 30);
         back.setForeground(new Color(131, 111, 111));
         back.setFont(new Font("华文宋体", Font.PLAIN, 27));
@@ -76,7 +130,34 @@ public class Connecter extends JFrame {
         write.setBounds(400,540,500,40);
         add(write);
         CLabel send = new CLabel("   发送");
+        class SendEvent extends MouseAdapter {
+            Object page;
 
+
+            public SendEvent(Object page) {
+                this.page = page;
+
+
+            }
+            public void mouseClicked(MouseEvent e) {
+
+                if (e.getSource() == page){
+                    try {
+                        System.out.println(send.getText());
+                        String re = TalkingSocket.talkServe(id,send.getText());
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
+                }
+
+
+
+            }
+        }
+        SendEvent searchEvent =new SendEvent(send);
+        send.addMouseListener(searchEvent);
         send.setForeground( Color.white);
         send.setFont(new Font("华文宋体", Font.PLAIN, 20));
         ImagePanel sends = new ImagePanel(true,25);
@@ -161,7 +242,7 @@ public class Connecter extends JFrame {
     }
 
     public static void main(String[] args) {
-        Connecter Connecter = new Connecter();
+        //Connecter Connecter = new Connecter();
     }
 }
 

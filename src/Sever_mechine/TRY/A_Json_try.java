@@ -65,7 +65,7 @@ public class A_Json_try {
     }*/
     public static void main(String[] args) throws Exception {
         JSONObject js = new JSONObject();
-        js = Message.msg_check("201900301133");
+        //js = Message.msg_check("201900301133");
         JSONObject json = new JSONObject();
         json.put("data",js.get("data"));
         json.put("flag",js.getIntValue("flag"));

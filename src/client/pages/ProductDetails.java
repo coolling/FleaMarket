@@ -27,10 +27,12 @@ public class ProductDetails extends JFrame {
     String id;
     int productAmount;
     String proid;
+    String name;
     public ProductDetails(String proid,String name,String id) throws IOException {
 
         super();
         this.id =id;
+        this.name=name;
         this.proid=proid;
         setLayout(null);
         Toolkit toolkit = Toolkit.getDefaultToolkit();//获得默认的底层控件的基本功能
@@ -38,8 +40,16 @@ public class ProductDetails extends JFrame {
         int x = (screen.width - 1111) / 2;
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.checkPro);
+
+        view();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+    }
+    private void view() throws IOException {
+        //InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.checkPro);
         System.out.print("请求连接");
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -64,11 +74,11 @@ public class ProductDetails extends JFrame {
             JSONObject js = JSONObject.parseObject(strInputstream);
             System.out.println(js);
 
-           productPrice=js.getFloatValue("goodsPrice");
-           productName=name;
-           productDetails=js.getString("goodsInfo");
-           productUrl="/product"+proid+".jpg";
-         productAmount=js.getIntValue("goodsAmount");
+            productPrice=js.getFloatValue("goodsPrice");
+            productName=name;
+            productDetails=js.getString("goodsInfo");
+            productUrl="/product"+proid+".jpg";
+            productAmount=js.getIntValue("goodsAmount");
 
 
 
@@ -83,13 +93,6 @@ public class ProductDetails extends JFrame {
                 }
             }
         }
-        view();
-
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-    }
-    private void view(){
         this.getContentPane().setBackground(Color.white);//用this.setBackground(Color.white);不行
         Color color1 = new Color(231, 252, 243);
         JPanel head = new JPanel();

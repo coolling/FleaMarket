@@ -32,11 +32,25 @@ public class Mygoods extends JFrame {
         int x = (screen.width - 1111) / 2;
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.checkMyPort);
+
+        view();
+        if (products.length == 0) {
+            noneView();
+        } else {
+            mangView();
+        }
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+
+
+    }
+
+    private void view() throws IOException {
+     //   InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.checkMyPort);
         System.out.print("请求连接");
-        repaint();
-        revalidate();
+
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 //客户端输入流，接收服务器消息
@@ -87,20 +101,6 @@ public class Mygoods extends JFrame {
                 }
             }
         }
-        view();
-        if (products.length == 0) {
-            noneView();
-        } else {
-            mangView();
-        }
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-
-
-    }
-
-    private void view() {
         Head head = new Head("我的商品界面");
         add(head);
         this.getContentPane().setBackground(Color.white);

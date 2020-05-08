@@ -10,8 +10,8 @@ import java.net.Socket;
 public class DownSocket {
     public static String downServe(int goodsId,String id) throws IOException {
         String re="";
-        InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket(addr, Base.down);
+    //    InetAddress addr = InetAddress.getLocalHost();
+        Socket socket = new Socket("127.0.0.1", Base.down);
         System.out.print("请求连接");
 
         try {

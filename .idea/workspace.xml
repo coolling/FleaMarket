@@ -1,7 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f3c9202-b713-48f6-b643-89755fdb543d" name="Default Changelist" comment="" />
+    <list default="true" id="4f3c9202-b713-48f6-b643-89755fdb543d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/Good/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/Good/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/Messagee/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/Messagee/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/TRY/A_Json_try.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/TRY/A_Json_try.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/TrReceiveLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/TrReceiveLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/TrSeeLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/TrSeeLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/commentAddLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/commentAddLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/commentSeeLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/commentSeeLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodAddLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodAddLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodBuyLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodBuyLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodGetLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodGetLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodInfoGetLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodInfoGetLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodOffshoreLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodOffshoreLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodSearchLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodSearchLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodSeeMineLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/goodSeeMineLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarAddLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarAddLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarBuyLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarBuyLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarDeleteAllLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarDeleteAllLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarDeleteSingleLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarDeleteSingleLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarSeeLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/shopCarSeeLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userInfoChangeLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userInfoChangeLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userLoginLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userLoginLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userPassChangeLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userPassChangeLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userPictureChangeLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userPictureChangeLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userRegisterLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userRegisterLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userToPerLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/Sever_mechine/userToPerLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/base/Base.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/base/Base.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/event/CheckMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/event/CheckMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/event/ConnenctEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/event/ConnenctEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/img/product10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/img/product11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/img/product12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/img/product7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/img/product8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/img/product9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/Connecter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/Connecter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/ModifyingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/ModifyingData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/Mygoods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/Mygoods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/PersonalCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/PersonalCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/ProductDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/ProductDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/ShoppingCart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/Talking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/Talking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/TransactionRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/pages/TransactionRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/AddCartSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/AddCartSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/BuySocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/BuySocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/ComSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/ComSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/DownSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/DownSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/LoginSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/LoginSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/SaveChangeSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/SaveChangeSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/SearchSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/SearchSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/SureSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/SureSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/TalkingSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/TalkingSocket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/deleteCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarket/client/socket/deleteCar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sever_mechine/Good/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sever_mechine/Good/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sever_mechine/Messagee/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sever_mechine/Messagee/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sever_mechine/TRY/A_Json_try.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sever_mechine/TRY/A_Json_try.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sever_mechine/start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sever_mechine/start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/base/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/base/Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/event/CheckMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/event/CheckMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/event/ConnenctEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/event/ConnenctEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/img/product10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/img/product11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/img/product12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/img/product7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/img/product8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/img/product9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/CommentsShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/CommentsShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/Connecter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/Connecter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/ModifyingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/ModifyingData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/Mygoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/Mygoods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/PersonalCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/PersonalCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/ProductDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/ProductDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/Talking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/Talking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/TransactionRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/TransactionRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/AddCartSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/AddCartSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/BuySocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/BuySocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/ComSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/ComSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/DownSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/DownSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/LoginSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/LoginSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/RegisterSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/RegisterSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/ReleaseSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/ReleaseSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/SaveChangeSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/SaveChangeSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/SearchSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/SearchSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/SureSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/SureSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/TalkingSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/TalkingSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/socket/deleteCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/socket/deleteCar.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +119,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Z7o3A4uFD3iSil646FTRP8XSti" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="findjar.last.used.dir" value="$USER_HOME$/Downloads/第五讲相关程序 软件" />
@@ -70,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Register">
+  <component name="RunManager" selected="Application.start">
     <configuration name="Evaluation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.pages.Evaluation" />
       <module name="FleaMarket" />
@@ -110,8 +205,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionRecord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.pages.TransactionRecord" />
+    <configuration name="Talking" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.pages.Talking" />
       <module name="FleaMarket" />
       <extension name="coverage">
         <pattern>
@@ -138,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.start" />
         <item itemvalue="Application.Login" />
+        <item itemvalue="Application.start" />
         <item itemvalue="Application.Register" />
+        <item itemvalue="Application.Talking" />
         <item itemvalue="Application.Evaluation" />
-        <item itemvalue="Application.TransactionRecord" />
       </list>
     </recent_temporary>
   </component>
@@ -252,11 +347,32 @@
       <workItem from="1588686801399" duration="24786000" />
       <workItem from="1588761980063" duration="375000" />
       <workItem from="1588762388439" duration="10299000" />
-      <workItem from="1588787940134" duration="12918000" />
+      <workItem from="1588787940134" duration="16622000" />
+      <workItem from="1588929873845" duration="575000" />
+      <workItem from="1588930515674" duration="4797000" />
+      <workItem from="1588941233829" duration="453000" />
+      <workItem from="1588942516114" duration="319000" />
+      <workItem from="1588943585823" duration="653000" />
+      <workItem from="1588944406795" duration="89000" />
+      <workItem from="1588944693082" duration="344000" />
+      <workItem from="1588945326587" duration="4317000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

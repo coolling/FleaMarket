@@ -22,4 +22,5 @@ public class Base {
     public static int comment=6601;
     public static int search=7111;
     public static int showCom=6602;
+    public static int talk=9999;
 }

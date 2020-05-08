@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Goods {
+
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?useSSL=false&serverTimezone=UTC";
     static final String USER = "root";
@@ -300,7 +301,6 @@ public class Goods {
             sql = "SELECT * FROM goods_info";
             ps = conn.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = ps.executeQuery();
-
             while (rs.next()) {
                 String aid_id = rs.getString(3);
                 if (aid_id.equals(user)){
@@ -309,6 +309,7 @@ public class Goods {
                     json1.put("goodsPrice",rs.getFloat(2));
                     json1.put("goodsAmount",rs.getInt(5));
                     json1.put("goodsId",rs.getInt(7));
+                    json1.put("goodsUser",rs.getString(3));
                     data.add(json1);
                     i++;
                 }
