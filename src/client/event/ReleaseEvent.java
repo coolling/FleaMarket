@@ -24,8 +24,9 @@ public class ReleaseEvent extends MouseAdapter {
             try {
                 String result = ReleaseSocket.ReleaseServer(id,frame.getName(),frame.getPrice(),frame.getDetail(),frame.getAmount());
                 if (result .equals("0")) {
-                    frame.dispose();
+
                     new ReleaseSuccess(id);
+                    frame.dispose();
                 } else {
                     frame.setVisible(false);
                     new Mistake(frame);

@@ -20,9 +20,10 @@ public class CheckMyGoodsEvent extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
+
             try {
                 new Mygoods(id);
+                frame.dispose();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

@@ -2,7 +2,7 @@ package Sever_mechine;
 
 import Sever_mechine.Comment.*;
 import Sever_mechine.Good.*;
-import Sever_mechine.Messagee.OnlineServer;
+import Sever_mechine.Messagee.*;
 import Sever_mechine.ShopCarr.*;
 import Sever_mechine.TR.*;
 import Sever_mechine.User.*;
@@ -11,7 +11,7 @@ import java.io.*;
 import java.lang.*;
 
 public class start {
-    public static void main(String args[]){
+    public start(){
         //采用接口创建多线程；
         //创建所有 User 开头类的线程对象；
         userLoginLine login = new userLoginLine();
@@ -47,6 +47,9 @@ public class start {
 
         //创建所有 Message 开头累的线程对象；
         messageLine message = new messageLine();
+        messageGetLine messageGet = new messageGetLine();
+        messageGetChatterLine messageGetChatter = new messageGetChatterLine();
+        messageCloseThreadLine messageCloseThread = new messageCloseThreadLine();
 
 
         /*——————————————————————————分界线——————————————————————————*/
@@ -85,6 +88,9 @@ public class start {
 
         //传递给所有 Message 线程对象的构造函数；
         Thread messageStart = new Thread(message);
+        Thread messageGetStart = new Thread(messageGet);
+        Thread messageGetChatterStart = new Thread(messageGetChatter);
+        Thread messageCloseThreadStart = new Thread(messageCloseThread);
 
         /*——————————————————————————分界线——————————————————————————*/
 
@@ -112,6 +118,9 @@ public class start {
         TrReceiveStart.start();
         TrSeeStart.start();
         messageStart.start();
+        messageGetStart.start();
+        messageGetChatterStart.start();
+        messageCloseThreadStart.start();
     }
 
 }
@@ -432,10 +441,10 @@ class TrSeeLine implements Runnable {
 //以下是有关Message的方法；
 class messageLine implements  Runnable {
     public void run(){
-        System.out.println("messageLine on !");
+        System.out.println("messageLine 1 on !");
         while (true) {
             try {
-                System.out.println("ok from messageLine");
+                System.out.println("ok from messageLine 1");
                 new OnlineServer().open();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -444,4 +453,45 @@ class messageLine implements  Runnable {
     }
 }
 
+class messageGetLine implements  Runnable {
+    public void run(){
+        System.out.println("messageLine 2 on !");
+        while (true) {
+            try {
+                System.out.println("ok from messageLine 2");
+                new Message_get().get_serve();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+class messageGetChatterLine implements  Runnable {
+    public void run(){
+        System.out.println("messageLine 3 on !");
+        while (true) {
+            try {
+                System.out.println("ok from messageLine 3");
+                new Message_getChatter().get_serve();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+class messageCloseThreadLine implements  Runnable{
+    public void run(){
+        System.out.println("messageLine 4 on !");
+        while (true) {
+            try {
+                System.out.println("ok from messageLine 4");
+                new Message_close().close_serve();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
 //Message到此为止

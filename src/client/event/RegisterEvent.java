@@ -34,8 +34,9 @@ public class RegisterEvent extends MouseAdapter {
             try {
                 String result = RegisterSocket.registerServe(frame.getPassWord(),frame.getUserId());
                 if (result .equals("0")) {
-                    frame.dispose();
+
                     new RegisterSuccess();
+                    frame.dispose();
                 } else {
                     frame.setVisible(false);
                     new Mistake(frame);
@@ -44,8 +45,9 @@ public class RegisterEvent extends MouseAdapter {
             }
 
         }else{
-            Sframe.dispose();
+
             new Login();
+            Sframe.dispose();
         }
 
 

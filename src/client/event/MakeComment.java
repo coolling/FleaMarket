@@ -33,9 +33,10 @@ public class MakeComment implements ActionListener {
             try {
                 String re = ComSocket.comServer(id,proid,frame.getComments());
                 if(re.equals("0")){
-                    frame.dispose();
+
                    // System.out.println(comments);
                     new SureSuccess(id,"评论成功！");
+                    frame.dispose();
                 }else {
                     frame.setVisible(false);
                     new Mistake(frame);

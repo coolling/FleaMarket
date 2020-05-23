@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Goods {
-
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?useSSL=false&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?spring.datasource.druid.test-while-idle=true&spring.datasource.druid.test-on-borrow=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
     static final String USER = "root";
     static final String PASS = "901190Aa";//基础信息设置
-
     public static int add(String n, float price, String user, String picture, int amount,String info) throws Exception
     {
         Connection conn1 = null;
@@ -98,6 +96,7 @@ public class Goods {
             System.out.println("Connecting Database...");
             System.out.println("Good finding...");
             String sql;
+            String userId = "null";
             sql = "SELECT * FROM goods_info";
             ps = conn1.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = ps.executeQuery();//会抛出异常
@@ -105,13 +104,25 @@ public class Goods {
                 int aid_id = rs.getInt(7);
                 String aid_user = rs.getString(3);
                 if (aid_id==id) {
+                    userId = rs.getString(3);
                     json.put("goodsPrice",rs.getFloat(2));
                     json.put("goodsPicture",rs.getString(4));
                     json.put("goodsInfo",rs.getString(6));
                     json.put("goodsAmount",rs.getInt(5));
+                    json.put("goodsId",rs.getInt(7));
+                    json.put("goodsUser",rs.getString(3));
                     System.out.println("Send done!");
                 }
-            }// 完成后关闭
+            }
+            sql = "SELECT * FROM user_info";
+            ps = conn1.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = ps.executeQuery();//会抛出异常
+            while (rs.next()){
+                if (rs.getString(1).equals(userId)) {
+                    json.put("userPicture",rs.getString(7));
+                    break;
+                }
+            }
             rs.close();
             ps.close();
             conn1.close();

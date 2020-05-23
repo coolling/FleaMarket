@@ -34,8 +34,9 @@ public class AddToCartEvent implements ActionListener {
             try {
                 String re = AddCartSocket.addServer(id,goodsName,goodsPrice,goodsAmount,goodId);
                 if(re.equals("0")){
-                    frame.dispose();
+
                     new AddSuccess(id,goodId,goodsName);
+                    frame.dispose();
                 }else {
                     frame.setVisible(false);
                     new Mistake(frame);

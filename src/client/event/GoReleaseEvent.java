@@ -19,8 +19,9 @@ public class GoReleaseEvent extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
+
             new ReleaseProduct(id);
+            frame.dispose();
         }
 
 

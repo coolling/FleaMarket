@@ -34,8 +34,9 @@ public class BuyEvent implements ActionListener {
             try {
                 String re = BuySocket.buyServe(Integer.parseInt(goodId), id, goodsAmount);
                 if (re.equals("0")) {
-                    frame.dispose();
+
                     new BuySuccess(id,goodId,goodName);
+                    frame.dispose();
                 } else {
                     frame.setVisible(false);
                     new Mistake(frame);

@@ -38,9 +38,10 @@ public class LoginEvent extends MouseAdapter {
                     String result =LoginSocket.loginServe(frame.getPassWord(),frame.getUserId());
                     if (result .equals("0")) {
 
-                        frame.dispose();
+
                         Base.counts++;
                         new Index(frame.getUserId());
+                        frame.dispose();
                     } else {
                        frame.setVisible(false);
                         new LoginMiss(frame);
@@ -51,8 +52,9 @@ public class LoginEvent extends MouseAdapter {
 
 
         } else {
-            frame.dispose();
+
             new Register();
+            frame.dispose();
         }
 
 

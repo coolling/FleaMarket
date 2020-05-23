@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ShopCar {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?useSSL=false&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
     static final String USER = "root";
     static final String PASS = "901190Aa";//基础信息设置
     public static JSONObject see_car(String id) {
@@ -42,7 +42,7 @@ public class ShopCar {
                     json1.put("goodsName",rs.getString(2));
                     json1.put("goodsPrice",rs.getFloat(3));
                     json1.put("goodsAmount",rs.getInt(4));
-                    json1.put("goodsId",rs.getString(5));
+                    json1.put("goodsId",rs.getInt(5));
                     data.add(json1);
                     i++;
                 }
@@ -92,7 +92,7 @@ public class ShopCar {
 
             String sql;
             sql = "insert into shopping_car(user_id,goods_name,goods_price,goods_amount,id) values(?,?,?,?,?)";
-           // ResultSet rs = stmt.executeQuery(sql);
+            //   ResultSet rs = stmt.executeQuery(sql);
             PreparedStatement preStmt=conn.prepareStatement(sql);
             preStmt.setString(1, user_id);
             preStmt.setString(2, name);
@@ -100,8 +100,8 @@ public class ShopCar {
             preStmt.setInt(4, amount);
             preStmt.setInt(5,id);
             preStmt.executeUpdate();
-          //  rs.close();
-           // stmt.close();
+            //    rs.close();
+            stmt.close();
             conn.close();
         }// 展开结果集数据库
         catch (SQLException se) {
@@ -140,10 +140,9 @@ public class ShopCar {
             System.out.println("Connecting Database...");
             System.out.println("Deleting...");
 
-            String sql;
-            sql = "SELECT * FROM shopping_car";
-            stmt = conn.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
-            ResultSet rs = stmt.executeQuery();
+            String sql = "select * from shopping_car";
+            PreparedStatement pst = conn.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 String aid_user = rs.getString(1);
                 int aid_id = rs.getInt(5);
@@ -158,7 +157,7 @@ public class ShopCar {
             pstmt.executeUpdate();
             pstmt.close();
             rs.close();
-            stmt.close();
+           // stmt.close();
             conn.close();
         }// 展开结果集数据库
         catch (SQLException se) {
@@ -199,10 +198,9 @@ public class ShopCar {
             System.out.println("Connecting Database...");
             System.out.println("Deleting...");
 
-            String sql;
-            sql = "SELECT * FROM shopping_car";
-            stmt = conn.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
-            ResultSet rs = stmt.executeQuery();
+            String sql = "select * from shopping_car";
+            PreparedStatement pst = conn.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 String aid_user = rs.getString(1);
                 if (aid_user.equals(user)) {
@@ -212,7 +210,7 @@ public class ShopCar {
                 }
             }
             sql = "DELETE FROM shopping_car where user_id='delete'";
-            PreparedStatement pstmt=conn.prepareStatement(sql);
+            PreparedStatement pstmt=conn.prepareStatement(sql,ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
             pstmt.executeUpdate();
             pstmt.close();
             rs.close();

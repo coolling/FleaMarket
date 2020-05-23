@@ -30,9 +30,10 @@ String proId;
 
         if (e.getSource() == imgProduct) {
 
-            frame.dispose();
+
             try {
                 new ProductDetails(proId,name,id);
+                frame.dispose();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

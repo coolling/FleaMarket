@@ -26,8 +26,9 @@ public class EditInforEvent implements ActionListener {
           String re= SaveChangeSocket.SaveChangeServe(userId,frame.getName(),frame.getNickname(),frame.getSex(),frame.getGrade(),frame.getTelephone(),frame.getMajor(),frame.getArea());
           if(re.equals("0")){
                System.out.println("修改成功");
-               frame.dispose();
+
                new EditSuccess(userId);
+              frame.dispose();
           }else{
               System.out.println("修改失败");
               frame.setVisible(false);

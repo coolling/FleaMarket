@@ -114,6 +114,6 @@ public class Register extends JFrame {
     }
 
     public static void main(String[] args) {
-        Register register = new Register();
+        Login register = new Login();
     }
 }

@@ -23,9 +23,10 @@ public class GoEditEvent extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
+
             try {
                 new ModifyingData(id);
+                frame.dispose();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

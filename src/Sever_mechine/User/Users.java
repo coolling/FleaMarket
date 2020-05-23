@@ -1,5 +1,6 @@
 package Sever_mechine.User;
 
+import Sever_mechine.Messagee.Message;
 import com.alibaba.fastjson.JSONObject;
 
 import java.sql.*;
@@ -340,7 +341,7 @@ public class Users {
         JSONObject json = new JSONObject();
         JSONObject cuo = new JSONObject();
         cuo.put("flag",1);
-        json.put("flag",0);
+        json.put("flag", Message.msgCheck(user));
 
         try {
             Class.forName(JDBC_DRIVER);// 注册 JDBC 驱动

@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class ShopCar_Ts {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?useSSL=false&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/FleaMarket?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
     static final String USER = "root";
     static final String PASS = "901190Aa";//基础信息设置
 

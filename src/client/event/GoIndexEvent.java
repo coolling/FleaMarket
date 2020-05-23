@@ -20,9 +20,10 @@ public class GoIndexEvent extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
+
             try {
                 new Index(id);
+                frame.dispose();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

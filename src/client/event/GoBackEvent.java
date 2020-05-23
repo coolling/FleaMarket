@@ -16,8 +16,9 @@ public class GoBackEvent extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
+
             frame2.setVisible(true);
+            frame.dispose();
         }
 
 

@@ -2,6 +2,7 @@ package client.pages;
 
 import client.base.Base;
 import client.component.*;
+import client.event.ConnenctEvent;
 import client.event.GoCenterEvent;
 import client.event.RegisterEvent;
 import client.socket.SearchSocket;
@@ -22,15 +23,10 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 public class Connecter extends JFrame {
-    JScrollPane talkDiv = new JScrollPane();
-    JPanel talkdiv = new JPanel();
     JScrollPane connectorDiv = new JScrollPane();
     JPanel connectordiv = new JPanel();
-    String[][] connectors ={{"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}, {"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}, {"/WechatIMG10.jpeg", "happy"}, {"/WechatIMG10.jpeg", "sad"}, {"/WechatIMG10.jpeg", "cry"}};
-    String talkings[][] = {{"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。", "0"},
-            {"/WechatIMG12.jpeg", "hello", "1"},
-            {"/WechatIMG10.jpeg", "JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。", "0"},
-            {"/WechatIMG12.jpeg", "hello", "1"}};
+    String[][] connectors=new String[0][4] ;
+
     String id;
     public Connecter(String id) throws IOException {
         super();
@@ -42,7 +38,7 @@ public class Connecter extends JFrame {
         int y = (screen.height - 625) / 2;
         setBounds(x, y, 1111, 625);//设置窗口居中
 
-        view();
+       view();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -50,11 +46,9 @@ public class Connecter extends JFrame {
     }
 
     private void view() throws IOException {
-      //  InetAddress addr = InetAddress.getLocalHost();
-        Socket socket = new Socket("127.0.0.1", Base.talk);
+        Socket socket = new Socket("127.0.0.1", Base.getchater);
         System.out.print("请求连接");
-        repaint();
-        revalidate();
+
         try {
             BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 //客户端输入流，接收服务器消息
@@ -67,29 +61,60 @@ public class Connecter extends JFrame {
             JSONObject joson = new JSONObject();
             //string
 
-            joson.put("userId", id);
-            // joson.put("type", "getChatter");
+            joson.put("user", id);
+
             String string = joson.toString();
             msg = string;
             pw.println(msg);
-            JSONObject joson1 = new JSONObject();
-            joson1.put("user", id);
-            joson1.put("type", "getChatter");
-            String string1 = joson1.toString();
-            msg = string1;
-            pw.println(msg);
+
             String strInputstream=br.readLine();
             System.out.println("输入信息为："+strInputstream);
             JSONObject js = JSONObject.parseObject(strInputstream);
-            //System.out.println(js);
+          //  System.out.println(js.getJSONArray("data").get(0));
+
+
+            if(js.getIntValue("amount")!=0){
+                connectors=new String[js.getIntValue("amount")][4];
+                for(int i=0;i<js.getIntValue("amount");i++){
+                    JSONObject a= (JSONObject) js.getJSONArray("data").get(i);
+                    String s[]=new String[4];
+
+
+                        BufferedImage image = null;
+                        byte[] imageByte = null;
+                        try {
+                            imageByte = DatatypeConverter.parseBase64Binary(a.getString("picture"));
+                            ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
+                            image = ImageIO.read(new ByteArrayInputStream(imageByte));
+                            bis.close();
+                            File outputfile = new File(System.getProperty("user.dir")+"/src/client/img/chater"+a.getString("id")+".jpg");
+                            ImageIO.write(image, "jpg", outputfile);
+                            //System.out.println(outputfile.getPath());
+                            s[0]="/chater"+a.getString("id")+".jpg";
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        s[1]=a.getString("webname");
+                        s[2]=a.getString("id");
+                        s[3]=""+a.getIntValue("message");
+                         connectors[i]=s;
+
+
+                }
+
+            }
+
+
 
 
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         this.getContentPane().setBackground(Color.white);
-        Color color1 = new Color(231, 252, 243);
+
         Head head = new Head("");
 
         add(head);
@@ -115,111 +140,18 @@ public class Connecter extends JFrame {
         add(connectorDiv);
 
 
-        talkDiv.setBounds(350, 75, 761, 430);
-        talkdiv.setBackground(Color.white);
-        talkdiv.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 2));
-        talkDiv.setViewportView(talkdiv);
-        talkdiv.setPreferredSize(new Dimension(755, 200*(talkings.length)));
-
-        add(talkDiv);
         showConnector();
-        showTalking();
-        talkDiv.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+       // showTalking();
+
         connectorDiv.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        RediusTextField write = new  RediusTextField(30,0);
-        write.setBounds(400,540,500,40);
-        add(write);
-        CLabel send = new CLabel("   发送");
-        class SendEvent extends MouseAdapter {
-            Object page;
-
-
-            public SendEvent(Object page) {
-                this.page = page;
-
-
-            }
-            public void mouseClicked(MouseEvent e) {
-
-                if (e.getSource() == page){
-                    try {
-                        System.out.println(send.getText());
-                        String re = TalkingSocket.talkServe(id,send.getText());
-
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-
-                }
-
-
-
-            }
-        }
-        SendEvent searchEvent =new SendEvent(send);
-        send.addMouseListener(searchEvent);
-        send.setForeground( Color.white);
-        send.setFont(new Font("华文宋体", Font.PLAIN, 20));
-        ImagePanel sends = new ImagePanel(true,25);
-        sends.setLayout(new BorderLayout());
-        sends.setBounds(930,540,80,40);
-
-        sends.setBackground(new Color(108, 158, 227));
-        sends.add(send);
-        add(sends);
+        CLabel we = new CLabel("哒哒哒小跳蚤祝您购物愉快");
+        add(we);
+        we.setBounds(450,240,500,40);
+      //  Color color1 = new Color(180, 252, 244);
+        //we.setForeground(color1);
+        we.setFont(new Font("华文宋体", Font.PLAIN, 38));
     }
 
-    private void showTalking() {
-        for (int i = 0; i < talkings.length; i++) {
-            int row=1;
-            String words = talkings[i][1].substring(0);
-            String words2 = talkings[i][1].substring(0);
-            while(words.length()>=22){
-                words=words.substring(22);
-                row++;
-            }
-            JPanel all = new JPanel();
-            all.setBackground(Color.white);
-            all.setLayout(null);
-            JPanel sentence = new JPanel();
-            sentence.setBackground(Color.white);
-            all.setPreferredSize(new Dimension(755, 80+(row-1)*30));
-            ImagePanel head = new ImagePanel(talkings[i][0]);
-            all.add(head);
-            sentence.setBounds(80, 20, 595, 80*row);
-
-            if (talkings[i][2].equals("0")) {
-
-                head.setBounds(15, 15, 50, 50);
-                sentence.setLayout(new FlowLayout(FlowLayout.LEFT,0,5));
-
-
-
-            } else if (talkings[i][2].equals("1")) {
-
-                head.setBounds(690, 15, 50, 50);
-                sentence.setLayout(new FlowLayout(FlowLayout.RIGHT));
-
-            }
-            while(row>0){
-                CLabel awords;
-                if(row==1){
-                    awords = new CLabel(words2);
-                }else {
-
-                    awords = new CLabel(words2.substring(0,22));
-                    words2=words2.substring(22);
-                }
-                awords.setPreferredSize(new Dimension(words2.length()*24,30));
-                row--;
-                awords.setFont((new Font("华文宋体", Font.PLAIN, 24)));
-                sentence.add(awords);
-
-            }
-            all.add(sentence);
-            talkdiv.add(all);
-        }
-    }
 
     private void showConnector() {
         for (int i = 0; i < connectors.length; i++) {
@@ -232,12 +164,16 @@ public class Connecter extends JFrame {
             CLabel name = new CLabel(connectors[i][1]);
             aConnectoer.add(head);
             aConnectoer.add(name);
-
+            if(connectors[i][3].equals("1")){
+                name.setForeground(Color.red);
+            }
             connectordiv.add(aConnectoer);
             aConnectoer.setPreferredSize(new Dimension(345, 80));
             name.setBounds(105, 27, 200, 30);
             head.setBounds(15, 15, 50, 50);
             aConnectoer.setBackground(new Color(169, 79, 249, 14));
+            ConnenctEvent connenctEvent = new ConnenctEvent(aConnectoer,this,id,connectors[i][2],null,null);
+            aConnectoer.addMouseListener(connenctEvent);
         }
     }
 

@@ -23,4 +23,7 @@ public class Base {
     public static int search=7111;
     public static int showCom=6602;
     public static int talk=9999;
+    public static int getchater=9997;
+    public static int his =9998;
+    public static int end =9988;
 }

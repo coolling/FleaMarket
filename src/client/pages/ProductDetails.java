@@ -28,6 +28,7 @@ public class ProductDetails extends JFrame {
     int productAmount;
     String proid;
     String name;
+    String uid;
     public ProductDetails(String proid,String name,String id) throws IOException {
 
         super();
@@ -79,7 +80,21 @@ public class ProductDetails extends JFrame {
             productDetails=js.getString("goodsInfo");
             productUrl="/product"+proid+".jpg";
             productAmount=js.getIntValue("goodsAmount");
+            uid = js.getString("goodsUser");
+            BufferedImage image = null;
+            byte[] imageByte = null;
+            try {
+                imageByte = DatatypeConverter.parseBase64Binary(js.getString("userPicture"));
+                ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
+                image = ImageIO.read(new ByteArrayInputStream(imageByte));
+                bis.close();
+                File outputfile = new File(System.getProperty("user.dir")+"/src/client/img/chater"+js.getString("goodsUser")+".jpg");
+                ImageIO.write(image, "jpg", outputfile);
+                //System.out.println(outputfile.getPath());
 
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
 
         } catch (IOException e) {
@@ -164,12 +179,15 @@ public class ProductDetails extends JFrame {
         AddToCartEvent addToCartEvent = new AddToCartEvent(add,this,id,productName, (float) productPrice,productAmount,proid);
         add.addActionListener(addToCartEvent);
         JButton connect = new JButton("联系卖家");
-        ConnenctEvent connenctEvent = new ConnenctEvent(connect,this,id);
+        ConnenctEvent connenctEvent = new ConnenctEvent(connect,this,id,uid,proid,productName);
         connect.addActionListener(connenctEvent);
         add(check);
-        add(add);
-        add(connect);
-        add(buy);
+        if(!id.equals(uid)){
+            add(add);
+            add(connect);
+            add(buy);
+        }
+
         buy.setBounds(900,505,110,50);
         buy.setForeground( new Color(141,131,131));
         check.setBounds(535,405,130,50);

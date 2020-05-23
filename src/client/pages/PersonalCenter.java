@@ -28,6 +28,7 @@ public class PersonalCenter extends JFrame {
     String area = "软件园";
     String telenumber="1111000111";
     String id;
+    boolean message=false;
     public PersonalCenter(String id) throws IOException {
         super();
         this.id = id;
@@ -80,6 +81,7 @@ public class PersonalCenter extends JFrame {
             name= js.getString("trueName");
             grade= js.getString("userGrade");
             telenumber= js.getString("userTel");
+            message=(js.getIntValue("flag")==1)?true:false;
             //result=  js.get("flag").toString();
             if(js.getString("userPicture").length()>10){
                 BufferedImage image = null;
@@ -260,7 +262,13 @@ public class PersonalCenter extends JFrame {
         tele.setBounds(220,195,300,45);
         tele.setForeground( new Color(119, 110, 110, 156));
         tele.setFont(new Font("华文宋体", Font.PLAIN, 20));
-
+        if(this.message){
+            JLabel m = new JLabel("叮！新消息到！");
+            add(m);
+            m.setFont(f1);
+            m.setForeground(c1);
+            m.setBounds(100,390,500,70);
+        }
     }
 
     public static void main(String[] args) throws IOException {

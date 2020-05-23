@@ -22,10 +22,11 @@ public class GoCenterEvent extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == page){
-            frame.dispose();
+
             try {
-               PerCenterSocket.goCenterServe(id);
+               //PerCenterSocket.goCenterServe(id);
                 new PersonalCenter(id);
+                frame.dispose();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

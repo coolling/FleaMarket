@@ -1,5 +1,6 @@
 package client.pages;
 
+import client.component.CField;
 import client.component.ImagePanel;
 import client.component.RediusTextField;
 import client.component.RoundBorder;
@@ -16,7 +17,7 @@ public class Login extends JFrame  {
     String userId = "";
     String passWord = "";
     RediusTextField user = new RediusTextField(40, 28);
-    RediusTextField password = new RediusTextField(40, 28);
+   CField password = new CField(40, 28);
 
     public Login() {
         super();
@@ -128,6 +129,6 @@ public class Login extends JFrame  {
 
     public static void main(String[] args) {
         Login login = new Login();
-
+       // Login login2 = new Login();
     }
 }
